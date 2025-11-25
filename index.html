@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jokenpô</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Jokenpô</h1>
+        <p class="descricao">
+            Escolha pedra, papel ou tesoura e veja se você derrota o computador.
+        </p>
+
+        <section class="painel">
+
+            <!-- LADO DO JOGADOR -->
+            <div class="lado jogador">
+                <h2>Você</h2>
+
+                <div class="opcoes opcoes-jogador">
+                    <div class="opcao-player" data-opcao="pedra">
+                        <img src="pedra.png" alt="Pedra">
+                        <span>Pedra</span>
+                    </div>
+
+                    <div class="opcao-player" data-opcao="papel">
+                        <img src="papel.png" alt="Papel">
+                        <span>Papel</span>
+                    </div>
+
+                    <div class="opcao-player" data-opcao="tesoura">
+                        <img src="tesoura.png" alt="Tesoura">
+                        <span>Tesoura</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VS -->
+            <div class="versus">VS</div>
+
+            <!-- LADO DO COMPUTADOR -->
+            <div class="lado computador">
+                <h2>Computador</h2>
+
+                <div class="opcoes opcoes-computador">
+                    <div class="opcao-comp" data-opcao="pedra">
+                        <img src="pedra.png">
+                        <span>Pedra</span>
+                    </div>
+
+                    <div class="opcao-comp" data-opcao="papel">
+                        <img src="papel.png">
+                        <span>Papel</span>
+                    </div>
+
+                    <div class="opcao-comp" data-opcao="tesoura">
+                        <img src="tesoura.png">
+                        <span>Tesoura</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="resultado">
+            <h2>Resultado</h2>
+            <p id="texto-resultado">Faça sua escolha para começar o jogo.</p>
+        </section>
+
+        <section class="placar">
+            <div>Vitórias: <span id="vitorias">0</span></div>
+            <div>Derrotas: <span id="derrotas">0</span></div>
+            <div>Empates: <span id="empates">0</span></div>
+        </section>
+
+        <button id="btn-reiniciar" class="btn-reiniciar">Reiniciar jogo</button>
+    </main>
+    <footer class="footer">
+    Desenvolvido por <strong>Juliana Apgaua Sant'Ana Vidigal</strong><br>
+    Disciplina: <strong>Desenvolvimento em JavaScript</strong><br>
+    <small>Novembro, 2025</small>
+</footer>
+</body>
+</html>

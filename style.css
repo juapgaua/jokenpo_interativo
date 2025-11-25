@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+}
+
+body {
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    background: #0b1220;
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #1e293b;
+    box-shadow: 0 15px 40px rgba(0,0,0,.4);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.painel {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lado {
+    border: 1px solid #334155;
+    border-radius: 15px;
+    padding: 20px;
+    width: 40%;
+}
+
+.lado h2 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.opcoes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.opcao-player, .opcao-comp {
+    background: #020617;
+    padding: 12px;
+    border-radius: 12px;
+    min-width: 90px;
+    border: 1px solid transparent;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.opcao-player img,
+.opcao-comp img {
+    width: 55px;
+    height: 55px;
+}
+
+.opcao-player span,
+.opcao-comp span {
+    margin-top: 6px;
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* --- Destaque azul do jogador --- */
+.opcao-player.selecionada {
+    border-color: #38bdf8;
+    box-shadow: 0 0 18px rgba(56,189,248,0.6);
+    transform: scale(1.05);
+}
+
+.opcao-player.nao-selecionada {
+    opacity: 0.3;
+}
+
+/* --- Destaque amarelo do computador --- */
+.opcao-comp.selecionada {
+    border-color: #facc15;
+    box-shadow: 0 0 18px rgba(250,204,21,0.6);
+    transform: scale(1.05);
+}
+
+.opcao-comp.nao-selecionada {
+    opacity: 0.3;
+}
+
+/* Hover apenas no jogador */
+.opcao-player:hover {
+    transform: translateY(-3px) scale(1.04);
+}
+
+/* VS */
+.versus {
+    font-size: 2rem;
+    background: radial-gradient(circle, #facc15, #f59e0b);
+    color: black;
+    padding: 15px 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(250,204,21,0.5);
+}
+
+/* Resultado */
+.resultado h2 {
+    margin-bottom: 8px;
+}
+
+#texto-resultado {
+    margin-bottom: 15px;
+}
+
+/* Placar */
+.placar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.placar div {
+    background: #1e293b;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
+
+/* Botão reiniciar */
+.btn-reiniciar {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: #064e3b;
+    font-weight: 600;
+    box-shadow: 0px 0px 25px rgba(34, 197, 94, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-reiniciar:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 25px rgba(34, 197, 94, 0.6);
+}
+
+.btn-reiniciar:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* ======== RESULTADO DESTACADO ======== */
+
+/* Destaque do resultado final */
+.resultado-extra {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* cores */
+.resultado-vitoria {
+    color: #4ade80; /* verde */
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+}
+
+.resultado-derrota {
+    color: #f87171; /* vermelho */
+    text-shadow: 0 0 10px rgba(248, 113, 113, 0.6);
+}
+
+.resultado-empate {
+    color: #facc15; /* amarelo */
+    text-shadow: 0 0 10px rgba(250, 204, 21, 0.6);
+}
+
+/* ====================== RESPONSIVIDADE ====================== */
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+
+    .painel {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .lado {
+        width: 100%;
+    }
+
+    .opcoes {
+        gap: 15px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .descricao {
+        font-size: 0.9rem;
+    }
+
+    /* Coloca tudo em coluna */
+    .painel {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .lado {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Mãos menores */
+    .opcao-player img,
+    .opcao-comp img {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* cartões menores */
+    .opcao-player,
+    .opcao-comp {
+        min-width: 70px;
+        padding: 8px 10px;
+    }
+
+    /* Centralizar textos */
+    .resultado-final {
+        font-size: 1.6rem;
+    }
+
+    #texto-resultado {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .placar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-reiniciar {
+        width: 80%;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .versus {
+        margin: 10px 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Celulares muito pequenos ou em modo retrato estreito */
+@media (max-width: 420px) {
+
+    .opcao-player img,
+    .opcao-comp img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .opcao-player,
+    .opcao-comp {
+        min-width: 60px;
+        padding: 6px;
+    }
+
+    .resultado-final {
+        font-size: 1.4rem;
+    }
+}
+
+/* ============= FOOTER ============= */
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px 10px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    border-top: 1px solid #1e293b;
+    opacity: 0.8;
+}
+
+.footer strong {
+    color: #e2e8f0;
+}
